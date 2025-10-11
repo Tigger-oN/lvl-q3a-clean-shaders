@@ -7,10 +7,11 @@
 //  - textures/gothic_block/xblocks17i_shiney [377 to 391]
 //  - textures/gothic_block/blocks17_sandy [397 to 418]
 //  - textures/gothic_block/blocks15_sandy [448 to 469]
+//  - textures/gothic_block/blocks17gwater [538 to 555]
 //  - textures/gothic_block/blocks11ct [608 to 622]
 //  - textures/gothic_block/electrohell [659 to 689]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:32:15 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:03:43 AEDT
 //
 // ## End of header ##
 textures/gothic_block/largerblock3blood
@@ -550,24 +551,24 @@ textures/gothic_block/evil_e3window_dark
 }
 
 
-textures/gothic_block/blocks17gwater
-
-{
-
-	{	map textures/gothic_block/blocks17gwater.tga
-		blendfunc GL_dst_color GL_one
-		alphafunc GT0
-		depthwrite
-	}
-	
-
-	{	map $lightmap
-		blendfunc gl_dst_color gl_one
-		tcgen environment
-		depthfunc equal
-	}
-	
-}
+//textures/gothic_block/blocks17gwater
+//
+//{
+//
+//	{	map textures/gothic_block/blocks17gwater.tga
+//		blendfunc GL_dst_color GL_one
+//		alphafunc GT0
+//		depthwrite
+//	}
+//	
+//
+//	{	map $lightmap
+//		blendfunc gl_dst_color gl_one
+//		tcgen environment
+//		depthfunc equal
+//	}
+//	
+//}
 
 
 textures/gothic_light/flicker_light15k

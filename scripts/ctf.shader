@@ -4,7 +4,7 @@
 // else changed. The full list is:
 //  - sprites/friend [646 to 654]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:32:07 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:03:35 AEDT
 //
 // ## End of header ##
 textures/ctf/blue_telep

@@ -25,7 +25,7 @@
 //  - textures/skies/mkc_ctf5sky [1870 to 1896]
 //  - textures/skies/proto_sky [1899 to 1928]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:31:52 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:03:23 AEDT
 //
 // ## End of header ##
 // q3map_sun <red> <green> <blue> <intensity> <degrees> <elevation>

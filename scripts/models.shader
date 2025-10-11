@@ -17,8 +17,16 @@
 //  - models/flags/flag_red [1954 to 1970]
 //  - models/mapobjects/bitch/bitch02 [1997 to 2010]
 //  - models/mapobjects/wallhead/femhead [2110 to 2130]
+//  - models/mapobjects/wallhead/wallhead_eye [2131 to 2142]
 //  - models/mapobjects/wallhead/wallhead [2143 to 2153]
+//  - models/weapons2/lightning/crackle1 [2255 to 2265]
 //  - models/weapons2/lightning/trail [2289 to 2303]
+//  - models/weapons2/lightning/trail1 [2320 to 2331]
+//  - models/weapons2/lightning/ball1 [2333 to 2344]
+//  - models/mapobjects/lightning/white/white1 [2384 to 2400]
+//  - models/mapobjects/lightning/red/red01 [2402 to 2418]
+//  - models/mapobjects/lightning/yel/yel01 [2420 to 2436]
+//  - models/mapobjects/lightning/blu/blu01 [2438 to 2454]
 //  - models/weapons2/grenadel/ring [2510 to 2523]
 //  - models/mapobjects/chain/chain2 [2536 to 2548]
 //  - models/mapobjects/chain/chain2_end [2549 to 2561]
@@ -42,7 +50,7 @@
 //  - models/weapons2/lightning/ball [4184 to 4200]
 //  - models/powerups/instant/scan [4207 to 4217]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:32:53 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:04:21 AEDT
 //
 // ## End of header ##
 //
@@ -2175,18 +2183,18 @@ models/players/anarki/anarki_g
 //	}	
 //	
 //}
-models/mapobjects/wallhead/wallhead_eye
-
-{
-       
-       
-        {
-              animMap 0.2 models/mapobjects/wallhead/wallhead_eye.tga models/mapobjects/wallhead/wallhead_eye2.tga 
-                rgbGen vertex
-        }
-	
-
-}
+//models/mapobjects/wallhead/wallhead_eye
+//
+//{
+//       
+//       
+//        {
+//              animMap 0.2 models/mapobjects/wallhead/wallhead_eye.tga models/mapobjects/wallhead/wallhead_eye2.tga 
+//                rgbGen vertex
+//        }
+//	
+//
+//}
 //models/mapobjects/wallhead/wallhead
 //
 //{
@@ -2299,17 +2307,17 @@ models/mapobjects/scoreboard/s_score
 }
 
 
-models/weapons2/lightning/crackle1
-{
-	sort additive
-	cull disable
-	
-	{
-		animMap 15 models/weapons2/lightning/crackle1.tga models/weapons2/lightning/crackle2.tga models/weapons2/lightning/crackle3.tga models/weapons2/lightning/crackle4.tga models/weapons2/lightning/crackle5.tga models/weapons2/lightning/crackle6.tga models/weapons2/lightning/crackle7.tga models/weapons2/lightning/crackle8.tga
-		blendFunc GL_ONE GL_ONE
-	}
-		
-}
+//models/weapons2/lightning/crackle1
+//{
+//	sort additive
+//	cull disable
+//	
+//	{
+//		animMap 15 models/weapons2/lightning/crackle1.tga models/weapons2/lightning/crackle2.tga models/weapons2/lightning/crackle3.tga models/weapons2/lightning/crackle4.tga models/weapons2/lightning/crackle5.tga models/weapons2/lightning/crackle6.tga models/weapons2/lightning/crackle7.tga models/weapons2/lightning/crackle8.tga
+//		blendFunc GL_ONE GL_ONE
+//	}
+//		
+//}
 
 models/weapons2/lightning/button
 {
@@ -2364,31 +2372,31 @@ models/weapons2/lightning/trail2
 	}
 }
 
-models/weapons2/lightning/trail1
-{
-	sort additive
-	cull disable
-	
-	{
-		animMap 15 models/weapons2/lightning/trail1.tga models/weapons2/lightning/trail2.tga models/weapons2/lightning/trail3.tga models/weapons2/lightning/trail4.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen vertex				
-	}
-	
-}
+//models/weapons2/lightning/trail1
+//{
+//	sort additive
+//	cull disable
+//	
+//	{
+//		animMap 15 models/weapons2/lightning/trail1.tga models/weapons2/lightning/trail2.tga models/weapons2/lightning/trail3.tga models/weapons2/lightning/trail4.tga
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen vertex				
+//	}
+//	
+//}
 
-models/weapons2/lightning/ball1
-{
-	sort additive
-	cull disable
-	
-	{
-		animMap 15 models/weapons2/lightning/ball1.tga models/weapons2/lightning/ball2.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen vertex				
-	}
-	
-}
+//models/weapons2/lightning/ball1
+//{
+//	sort additive
+//	cull disable
+//	
+//	{
+//		animMap 15 models/weapons2/lightning/ball1.tga models/weapons2/lightning/ball2.tga
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen vertex				
+//	}
+//	
+//}
 
 models/mapobjects/slamp/slamp3
 {
@@ -2428,77 +2436,77 @@ models/mapobjects/slamp/slamp2
 
 }
 
-models/mapobjects/lightning/white/white1
-{
-	deformVertexes wave 100 sin 0 1 0 5
-        q3map_surfacelight	3000
+//models/mapobjects/lightning/white/white1
+//{
+//	deformVertexes wave 100 sin 0 1 0 5
+//        q3map_surfacelight	3000
+//
+//	surfaceparm	trans
+//	surfaceparm nomarks
+//	surfaceparm nolightmap
+//	cull none
+//	
+//	{
+//		animMap 15 models/mapobjects/lightning/white/white1.tga models/mapobjects/lightning/white/white2.tga models/mapobjects/lightning/white/white3.tga models/mapobjects/lightning/white/white4.tga models/mapobjects/lightning/white/white5.tga models/mapobjects/lightning/white/white6.tga models/mapobjects/lightning/white/white7.tga models/mapobjects/lightning/white/white8.tga
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen vertex				
+//	}
+//	
+//}
 
-	surfaceparm	trans
-	surfaceparm nomarks
-	surfaceparm nolightmap
-	cull none
-	
-	{
-		animMap 15 models/mapobjects/lightning/white/white1.tga models/mapobjects/lightning/white/white2.tga models/mapobjects/lightning/white/white3.tga models/mapobjects/lightning/white/white4.tga models/mapobjects/lightning/white/white5.tga models/mapobjects/lightning/white/white6.tga models/mapobjects/lightning/white/white7.tga models/mapobjects/lightning/white/white8.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen vertex				
-	}
-	
-}
+//models/mapobjects/lightning/red/red01
+//{
+//	deformVertexes wave 100 sin 0 1 0 5
+//        q3map_surfacelight	3000
+//
+//	surfaceparm	trans
+//	surfaceparm nomarks
+//	surfaceparm nolightmap
+//	cull none
+//	
+//	{
+//		animMap 15 models/mapobjects/lightning/red/red01.tga models/mapobjects/lightning/red/red02.tga models/mapobjects/lightning/red/red03.tga models/mapobjects/lightning/red/red04.tga models/mapobjects/lightning/red/red05.tga models/mapobjects/lightning/red/red06.tga models/mapobjects/lightning/red/red07.tga models/mapobjects/lightning/red/red08.tga
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen vertex				
+//	}
+//	
+//}
 
-models/mapobjects/lightning/red/red01
-{
-	deformVertexes wave 100 sin 0 1 0 5
-        q3map_surfacelight	3000
+//models/mapobjects/lightning/yel/yel01
+//{
+//	deformVertexes wave 100 sin 0 1 0 5
+//        q3map_surfacelight	3000
+//
+//	surfaceparm	trans
+//	surfaceparm nomarks
+//	surfaceparm nolightmap
+//	cull none
+//	
+//	{
+//		animMap 15 models/mapobjects/lightning/yel/yel01.tga models/mapobjects/lightning/yel/yel02.tga models/mapobjects/lightning/yel/yel03.tga models/mapobjects/lightning/yel/yel04.tga models/mapobjects/lightning/yel/yel05.tga models/mapobjects/lightning/yel/yel06.tga models/mapobjects/lightning/yel/yel07.tga models/mapobjects/lightning/yel/yel08.tga
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen vertex				
+//	}
+//	
+//}
 
-	surfaceparm	trans
-	surfaceparm nomarks
-	surfaceparm nolightmap
-	cull none
-	
-	{
-		animMap 15 models/mapobjects/lightning/red/red01.tga models/mapobjects/lightning/red/red02.tga models/mapobjects/lightning/red/red03.tga models/mapobjects/lightning/red/red04.tga models/mapobjects/lightning/red/red05.tga models/mapobjects/lightning/red/red06.tga models/mapobjects/lightning/red/red07.tga models/mapobjects/lightning/red/red08.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen vertex				
-	}
-	
-}
-
-models/mapobjects/lightning/yel/yel01
-{
-	deformVertexes wave 100 sin 0 1 0 5
-        q3map_surfacelight	3000
-
-	surfaceparm	trans
-	surfaceparm nomarks
-	surfaceparm nolightmap
-	cull none
-	
-	{
-		animMap 15 models/mapobjects/lightning/yel/yel01.tga models/mapobjects/lightning/yel/yel02.tga models/mapobjects/lightning/yel/yel03.tga models/mapobjects/lightning/yel/yel04.tga models/mapobjects/lightning/yel/yel05.tga models/mapobjects/lightning/yel/yel06.tga models/mapobjects/lightning/yel/yel07.tga models/mapobjects/lightning/yel/yel08.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen vertex				
-	}
-	
-}
-
-models/mapobjects/lightning/blu/blu01
-{
-	deformVertexes wave 100 sin 0 1 0 5
-        q3map_surfacelight	3000
-
-	surfaceparm	trans
-	surfaceparm nomarks
-	surfaceparm nolightmap
-	cull none
-	
-	{
-		animMap 15 models/mapobjects/lightning/blu/blu01.tga models/mapobjects/lightning/blu/blu02.tga models/mapobjects/lightning/blu/blu03.tga models/mapobjects/lightning/blu/blu04.tga models/mapobjects/lightning/blu/blu05.tga models/mapobjects/lightning/blu/blu06.tga models/mapobjects/lightning/blu/blu07.tga models/mapobjects/lightning/blu/blu08.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen vertex				
-	}
-	
-}
+//models/mapobjects/lightning/blu/blu01
+//{
+//	deformVertexes wave 100 sin 0 1 0 5
+//        q3map_surfacelight	3000
+//
+//	surfaceparm	trans
+//	surfaceparm nomarks
+//	surfaceparm nolightmap
+//	cull none
+//	
+//	{
+//		animMap 15 models/mapobjects/lightning/blu/blu01.tga models/mapobjects/lightning/blu/blu02.tga models/mapobjects/lightning/blu/blu03.tga models/mapobjects/lightning/blu/blu04.tga models/mapobjects/lightning/blu/blu05.tga models/mapobjects/lightning/blu/blu06.tga models/mapobjects/lightning/blu/blu07.tga models/mapobjects/lightning/blu/blu08.tga
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen vertex				
+//	}
+//	
+//}
 
 models/mapobjects/pitted_rust_ps
 {

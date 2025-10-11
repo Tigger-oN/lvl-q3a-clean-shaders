@@ -17,7 +17,7 @@
 //  - textures/hell/light1red [269 to 287]
 //  - textures/hell/light1blue [288 to 306]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:32:54 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:04:22 AEDT
 //
 // ## End of header ##
 //textures/hell/ironcrosslt1_5000

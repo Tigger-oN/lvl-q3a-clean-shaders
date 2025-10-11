@@ -6,6 +6,7 @@
 //  - gfx/2d/menuinfo2 [613 to 619]
 //  - gfx/2d/quit [621 to 628]
 //  - gfx/2d/cursor [630 to 637]
+//  - textures/animationTest [651 to 666]
 //  - gfx/2d/crosshair [988 to 996]
 //  - gfx/2d/crosshairk [1087 to 1095]
 //  - gfx/2d/assault1d [1122 to 1129]
@@ -13,7 +14,7 @@
 //  - gfx/2d/health [1138 to 1145]
 //  - gfx/2d/blank [1146 to 1153]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:32:05 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:03:33 AEDT
 //
 // ## End of header ##
 // GFX.SHADER
@@ -666,22 +667,22 @@ sprites/balloon3
 }
 
 // this is an example of a crossfaded animation cycle
-textures/animationTest
-{
-	qer_editorimage	textures/liquids/bloodwater1.tga
-	{
-		animMap 0.5 textures/liquids/bloodwater1.tga textures/liquids/pool.tga textures/liquids/slime7.tga
-	}	
-	{
-		animMap 0.5 textures/liquids/pool.tga textures/liquids/slime7.tga textures/liquids/bloodwater1.tga
-		blendFunc	GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		alphaGen	wave sawtooth 0 1 0 0.5
-	}	
-	{
-		map $lightmap
-		blendFunc GL_DST_COLOR GL_ZERO
-	}
-}
+//textures/animationTest
+//{
+//	qer_editorimage	textures/liquids/bloodwater1.tga
+//	{
+//		animMap 0.5 textures/liquids/bloodwater1.tga textures/liquids/pool.tga textures/liquids/slime7.tga
+//	}	
+//	{
+//		animMap 0.5 textures/liquids/pool.tga textures/liquids/slime7.tga textures/liquids/bloodwater1.tga
+//		blendFunc	GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+//		alphaGen	wave sawtooth 0 1 0 0.5
+//	}	
+//	{
+//		map $lightmap
+//		blendFunc GL_DST_COLOR GL_ZERO
+//	}
+//}
 
 teleportEffect
 {

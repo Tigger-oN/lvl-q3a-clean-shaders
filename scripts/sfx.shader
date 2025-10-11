@@ -23,6 +23,7 @@
 //  - textures/sfx/metaltech12darkfinal_bounce [1772 to 1807]
 //  - textures/sfx/metaltechfloor01final_bounce [1810 to 1844]
 //  - textures/sfx/metalfloor_glass [1892 to 1912]
+//  - textures/sfx/small_smoke1_1 [2021 to 2048]
 //  - textures/sfx/grid [2151 to 2167]
 //  - textures/sfx/pentagramfloor_red3test [2967 to 2984]
 //  - textures/sfx/goopq1metal7_98dhuge_pent [2986 to 3003]
@@ -84,7 +85,7 @@
 //  - textures/sfx/q1teleporter [5380 to 5397]
 //  - textures/sfx/pureblack [5578 to 5586]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:32:32 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:04:00 AEDT
 //
 // ## End of header ##
 
@@ -2107,34 +2108,34 @@ textures/sfx/portal_sfx_ring
 
 }
 
-textures/sfx/small_smoke1_1
-{
-
-	//	*************************************************
-	//	*      	Smoke					*
-	//	*      	June 18 1999				*	
-	//	*	Please Comment Changes			*
-	//	*************************************************
-	
-	deformVertexes autoSprite
-	surfaceparm nomarks
-	surfaceparm nolightmap
-	cull none
-	
-
-	{
-		animMap 10 textures/sfx/small_smoke1_1.tga textures/sfx/small_smoke1_2.tga textures/sfx/small_smoke1_3.tga textures/sfx/small_smoke1_4.tga textures/sfx/small_smoke1_5.tga textures/sfx/small_smoke1_6.tga 
-		blendFunc GL_ONE GL_ONE
-		rgbGen wave inverseSawtooth 0 1 0 10	
-	}
-	
-	{
-		animMap 10 textures/sfx/small_smoke1_2.tga textures/sfx/small_smoke1_3.tga textures/sfx/small_smoke1_4.tga textures/sfx/small_smoke1_5.tga textures/sfx/small_smoke1_6.tga textures/sfx/small_smoke1_1.tga 
-		blendFunc GL_ONE GL_ONE
-		rgbGen wave sawtooth 0 1 0 10
-	}	
-
-}
+//textures/sfx/small_smoke1_1
+//{
+//
+//	//	*************************************************
+//	//	*      	Smoke					*
+//	//	*      	June 18 1999				*	
+//	//	*	Please Comment Changes			*
+//	//	*************************************************
+//	
+//	deformVertexes autoSprite
+//	surfaceparm nomarks
+//	surfaceparm nolightmap
+//	cull none
+//	
+//
+//	{
+//		animMap 10 textures/sfx/small_smoke1_1.tga textures/sfx/small_smoke1_2.tga textures/sfx/small_smoke1_3.tga textures/sfx/small_smoke1_4.tga textures/sfx/small_smoke1_5.tga textures/sfx/small_smoke1_6.tga 
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen wave inverseSawtooth 0 1 0 10	
+//	}
+//	
+//	{
+//		animMap 10 textures/sfx/small_smoke1_2.tga textures/sfx/small_smoke1_3.tga textures/sfx/small_smoke1_4.tga textures/sfx/small_smoke1_5.tga textures/sfx/small_smoke1_6.tga textures/sfx/small_smoke1_1.tga 
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen wave sawtooth 0 1 0 10
+//	}	
+//
+//}
 
 
 

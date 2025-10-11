@@ -20,7 +20,7 @@
 //  - textures/gothic_trim/metalbase03a_brick [745 to 773]
 //  - textures/gothic_trim/metalbase03d_iron [775 to 803]
 //
-// - Tig : https://lvlworld.com/ : Tue 07 Oct 2025 20:32:56 AEDT
+// - Tig : https://lvlworld.com/ : Sat 11 Oct 2025 18:04:24 AEDT
 //
 // ## End of header ##
 textures/gothic_trim/x_noblight

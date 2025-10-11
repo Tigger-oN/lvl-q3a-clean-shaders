@@ -2,17 +2,12 @@
 #
 # Confirm that the required textures are available for each shader
 #
-# Issues: 
-# - Not checking textures from animMap
-# 
-# Last edit: 2025-10-07
-# 
+# Last edit: 2025-10-11
 
 # Keep track of stuff
 LOG=""
 CHANGED=""
 
-# Quick unpack. Edit to match your setup.
 unpak () {
 	p=0
 	while [ ${p} -lt 9 ]
@@ -26,7 +21,6 @@ blockLoop2 () {
 	SHADER_FILE="${1}"
 	CHANGED=""
 	printf "\nReading : %s\n" "${SHADER_FILE}"
-	
 	# The start and end of the shader block
 	B_START=0
 	B_END=0
@@ -35,7 +29,7 @@ blockLoop2 () {
 	# The line count
 	lCount=1
 	shader=""
-	# Can't always use shell expansion as the line could be a mess
+	# Can't use shell expansion as the line could be a mess
 	while IFS= read -r l || [ -n "${l}" ]
 	do
 		mode=""
@@ -66,10 +60,11 @@ blockLoop2 () {
 			# texture request and skip if already missing
 			if [ -z "${T_MISSING}" ]
 			then
-				if printf "%s\n" "${trim}" | grep -vi '$lightmap\|$whiteimage\|*white' | grep -iq '^map[[:space:]]\|^sky[[:space:]]'
+				if printf "%s\n" "${trim}" | grep -vi '$lightmap\>\|$whiteimage\>\|*white\>' | grep -iq '\<map\>\|\<sky\>\|\<animmap\>'
 				then
-					mode=$(printf "%s\n" "${trim}" | awk '{print $1}' | tr '[:upper:]' '[:lower:]')
-					texture=$(printf "%s\n" "${trim}" | awk '{print $2}')
+					mode=$(printf "%s\n" "${trim}" | sed 's/^[^[:alnum:]]*//' | awk '{print $1}' | tr '[:upper:]' '[:lower:]')
+					# lines like '{ map texture' make this a little tricky. awk is needed to catch possible syntax issues
+					texture=$(printf "%s\n" "${trim}" | sed 's/^[^[:alnum:]]*//;s/\(^map[[:space:]]\|^sky[[:space:]]\|^animmap[[:space:]]\)[[:space:]]*//i' | awk '{print $1}')
 					if [ -n "${texture}" -a -n "${mode}" ]
 					then
 						p="${texture%/*}"
@@ -78,13 +73,34 @@ blockLoop2 () {
 						if [ "${mode}" = "map" ]
 						then
 							find "./${p}" -type f 2> /dev/null | grep -iq "/${n}.tga\|/${n}.jpg"
+							if [ ${?} -eq 1 ]
+							then
+								T_MISSING="yes"
+							fi
 						elif [ "${mode}" = "sky" ]
 						then
 							find "./${p}" -type f 2> /dev/null | grep -iq "/${n}_ft.tga\|/${n}_ft.jpg"
-						fi
-						if [ ${?} -eq 1 ]
+							if [ ${?} -eq 1 ]
+							then
+								T_MISSING="yes"
+							fi
+						elif [ "${mode}" = "animmap" ]
 						then
-							T_MISSING="yes"
+							# animMap list
+							aList=$(printf "%s\n" "${trim}" | sed 's/^[^[:alnum:]]*//;s/[^[:alnum:]]*$//;s/\r//g' | awk '{out=$3; for(i=4;i<=NF;i++){out=out OFS $i}; print out}')
+							unset IFS
+							for a in ${aList}
+							do
+								p="${a%/*}"
+								n="${a%.*}"
+								n="${n##*/}"
+								find "./${p}" -type f 2> /dev/null | grep -iq "/${n}.tga\|/${n}.jpg"
+								if [ ${?} -eq 1 ]
+								then
+									T_MISSING="yes"
+									break
+								fi
+							done
 						fi
 					fi
 				fi
@@ -96,7 +112,7 @@ blockLoop2 () {
 			then
 				if [ "${T_MISSING}" = "yes" ]
 				then
-					printf "Issue with:[%s] Commented from [%d] to [%d]\n" "${shader}" ${B_START} ${B_END}
+					printf "Issue with:[%s] Commented from line %d to %d\n" "${shader}" ${B_START} ${B_END}
 					sed "${B_START},${B_END}s#^#//#" "${SHADER_FILE}" > "${SHADER_FILE}.tmp"
 					mv "${SHADER_FILE}.tmp" "${SHADER_FILE}"
 					LOG="${LOG}${SHADER_FILE}: ${shader} [${B_START} to ${B_END}]
@@ -109,15 +125,13 @@ blockLoop2 () {
 				T_MISSING=""
 				shader=""
 			fi
-		#else
-			#printf "[%d] S:[%s] C:[%d] BLANK LINE\n" ${lCount} "${shader}" ${B_COUNT}
 		fi
 		# Track the lines
 		lCount=$((lCount + 1))
 	done < "${SHADER_FILE}"
 }
 
-#blockLoop2 "scripts/lvl.sfx.shader"
+#blockLoop2 "scripts/lvl.test.shader"
 #blockLoop2 "scripts/eerie.shader"
 #exit
 
@@ -136,10 +150,13 @@ do
 	if [ -n "${CHANGED}" ]
 	then
 		printf "// ## Start of header ## - remove to match up the line numbers\n//\n// Shader(s) with missing textures have been commented out. Nothing\n// else changed. The full list is:\n" > "./tmp"
+		IFS="
+"
 		for l in ${CHANGED}
 		do
 			printf "//  - %s\n" "${l}" >> "./tmp"
 		done
+		unset IFS
 		printf "//\n// - Tig : https://lvlworld.com/ : %s\n//\n// ## End of header ##\n" "$(date)" >> "./tmp"
 		cat "${f}" >> "./tmp"
 		mv -f "./tmp" "${f}"
@@ -149,6 +166,8 @@ done
 if [ -n "${LOG}" ]
 then
 	printf "%s\n" "${LOG}" > "./.lvl-shader-block-check.log"
+else
+	printf "LOG is blank!!\n\n"
 fi
 
 
