@@ -2,7 +2,7 @@
 #
 # Confirm that the required textures are available for each shader
 #
-# Last edit: 2025-10-11
+# Last edit: 2025-10-26
 
 # Keep track of stuff
 LOG=""
@@ -143,7 +143,7 @@ fi
 
 IFS="
 "
-for f in $(find ./scripts -type f -name '*.shader')
+for f in $(find ./scripts_q3a ./scripts_dev -type f -name '*.shader')
 do
 	#printf "f:[%s]\n" "${f}"
 	blockLoop2 "${f}"
